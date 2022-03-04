@@ -1,6 +1,6 @@
 package com.minutemate.sera_api.domain.account.service;
 
-import com.minutemate.sera_api.domain.account.AuthorizeJwtTokenizer;
+import com.minutemate.sera_api.domain.account.tokenizer.AuthorizeJwtTokenizer;
 import com.minutemate.sera_api.domain.account.config.EmailAuthorizeProperty;
 import com.minutemate.sera_api.domain.account.data.entity.AuthorizeNumberEntity;
 import com.minutemate.sera_api.domain.account.exception.UnknownAuthorizeNumberException;

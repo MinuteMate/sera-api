@@ -1,6 +1,7 @@
 package com.minutemate.sera_api.global.util;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -23,6 +24,10 @@ public class JwtUtil {
     }
 
     public static Claims parse(String secretKey, String token) {
-        return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
+        try {
+            return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
+        } catch (IllegalArgumentException e) {
+            throw new JwtException("JWT 토큰이 비었습니다!", e);
+        }
     }
 }
