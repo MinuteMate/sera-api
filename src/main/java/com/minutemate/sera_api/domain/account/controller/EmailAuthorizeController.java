@@ -5,7 +5,6 @@ import com.minutemate.sera_api.domain.account.data.response.GetAuthorizeTokenByN
 import com.minutemate.sera_api.domain.account.exception.UnknownAuthorizeNumberException;
 import com.minutemate.sera_api.domain.account.service.EmailAuthorizeService;
 import com.minutemate.sera_api.infra.exception.MailSendingException;
-import io.jsonwebtoken.JwtException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

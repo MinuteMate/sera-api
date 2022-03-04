@@ -1,4 +1,4 @@
-package com.minutemate.sera_api.domain.account;
+package com.minutemate.sera_api.domain.account.tokenizer;
 
 import com.minutemate.sera_api.domain.account.config.AuthorizeJwtProperty;
 import com.minutemate.sera_api.global.util.JwtUtil;
@@ -17,5 +17,9 @@ public class AuthorizeJwtTokenizer {
         Map<String, Object> claims = new HashMap<>();
         claims.put("email", email);
         return JwtUtil.jwt(authorizeJwtProperty.getSecret(), authorizeJwtProperty.getExpiredSeconds(), claims);
+    }
+
+    public String getEmailByToken(String token) {
+        return JwtUtil.parse(authorizeJwtProperty.getSecret(), token).get("email", String.class);
     }
 }

@@ -31,4 +31,8 @@ authorize:
   jwt:
     expired-seconds: 600
     secret: ${AUTHORIZE_JWT_SECRET}
-
+login:
+  jwt:
+    login-token-expired-seconds: 1800
+    refresh-token-expired-seconds: 7200
+    secret: ${LOGIN_JWT_SECRET}
